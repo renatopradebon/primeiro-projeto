@@ -1,21 +1,50 @@
 <section>
   <!--<article>-->
-    <!--<h3>Article</h3>-->
-    <!--<p>String renderizada com interpolação: {{ url }}</p>-->
-    <!--<p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>-->
-    <!--<p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor()}}</p>-->
-    <!--<p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor()}}</p>-->
-    <!--<p>Curso de Angular de gosto do curso {{ cursoAngular && getCurtirCurso() }}</p>-->
+  <!--<h3>Article</h3>-->
+  <!--<p>String renderizada com interpolação: {{ url }}</p>-->
+  <!--<p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>-->
+  <!--<p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor()}}</p>-->
+  <!--<p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor()}}</p>-->
+  <!--<p>Curso de Angular de gosto do curso {{ cursoAngular && getCurtirCurso() }}</p>-->
   <!--</article>-->
 
   <!--<article>-->
-    <!--<h3>Property Binding</h3>-->
-    <!--<img src="{{ urlImagem }}"/>-->
+  <!--<h3>Property Binding</h3>-->
+  <!--<img src="{{ urlImagem }}"/>-->
 
-    <!--<img [src]="urlImagem"/>-->
+  <!--<img [src]="urlImagem"/>-->
 
-    <!--<img bind-src="urlImagem"/>-->
+  <!--<img bind-src="urlImagem"/>-->
   <!--</article>-->
+
+  <article>
+    <h3>Class and Style Binding</h3>
+
+    <div>
+      Select one class:
+      <select #classSelected (change)="0">
+        <option value="alert-success">Success</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-warning">Warning</option>
+        <option value="alert-danger">Danger</option>
+      </select>
+      <br/><br/>
+    </div>
+
+    <div class="alert {{classSelected.value}}">
+      Colority text from combobox's value
+    </div>
+    <div class="alert" role="alert" [class.alert-success]="classSelected.value == 'alert-success'">Sucess</div>
+    <div class="alert" role="alert" [class.alert-info]="classSelected.value == 'alert-info'">Info</div>
+    <div class="alert" role="alert" [class.alert-warning]="classSelected.value == 'alert-warning'">Warning</div>
+    <div class="alert" role="alert" [class.alert-danger]="classSelected.value == 'alert-danger'">Danger</div>
+
+    <div class="alert alert-danger" role="alert"
+         [style.display]="classSelected.value=='alert-danger' ? 'block' : 'none'">This text can viewed only in case of
+      error.
+    </div>
+
+  </article>
 
 
 </section>
